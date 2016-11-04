@@ -4,5 +4,4 @@ public enum Roshambo {
 	PAPER,
 	SCISSORS
 	
-	
 }

@@ -1,9 +1,9 @@
 
 public class Player {
 	String name;
-	String value;//Roshambo whatever they pick
+	Roshambo value;//Roshambo whatever they pick
 	
-	public Player(String name, String value){
+	public Player(String name, Roshambo value){
 		this.name = name;
 		this.value = value;
 	}
@@ -12,15 +12,16 @@ public class Player {
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setName() {
 		this.name = name;
 	}
 
-	public String getValue() {
+	public Roshambo getValue() {
 		return value;
 	}
 
-	public void setValue(String value) {
+	public void setValue() {
 		this.value = value;
 	}
+	//abstract method generateRoshamboApp
 }
