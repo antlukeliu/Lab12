@@ -13,26 +13,14 @@ public class RoshamboApp {
 		String opponent = scan.nextLine();
 		
 		
-		String opp = "Robot";
-		if (opponent.equals("r")){
-			opp = "Robot";
-		} 
-		
-		
-		
+		//do
 		System.out.println("Rock, paper, or scissors?(R/P/S)");
 		String value = scan.nextLine();
-		
-		compare(name, opp, value, "rock");
-
-	}
-	//Player2 "Robot" choice2 = "Rock"
-	//Replace String value with enum value later                 paper          rock
-	public static void compare(String Player1, String Player2, String choice1, String choice2){
-		
-		//combination of paper and rock
-		//paper wins so we would say player 1 wins
-		//if choices are paper and rock will be true
+		//get rps value
+		//set opponent value
+		//get roshambo value
+		//print what each player choose
+		//keep count
 		
 		if((choice1.equals("paper") && choice2.equals("rock")) 
 				||(choice1.equals("rock") && choice1.equals("scissors"))
@@ -43,7 +31,30 @@ public class RoshamboApp {
 		}else{
 			System.out.println(Player2 + " wins");
 		}
-			
+
+		//print count
+		//loop again
+		//while what?
+		//exit message
+	}
+	public static Roshambo getPlayerValue(char rps){
+		if (rps == 'r'){
+			return Roshambo.ROCK;
+		}else if (rps == 's'){
+			return Roshambo.SCISSORS;
+		}else{
+			return Roshambo.PAPER;
 		}
+	}
+	
+	public static Player getOpponent(char choosingOpp){
+		Player opponent;
+		if (choosingOpp == 'r'){
+			opponent = new Robot(null, null);
+		} else{
+			opponent = new Animal(null, null);
+		}
+		return opponent;
+	}
 	}
 
