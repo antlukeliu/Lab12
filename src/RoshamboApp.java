@@ -16,21 +16,21 @@ public class RoshamboApp {
 		
 		char opp1 = rpsv.PlayerVal();
 		boolean condition = true;
-		Player ply2 = getOpponent(opp1);
+		//Instantiated a new HumanPlayer taking in a String called name and 
+		//Roshambo value of null
 		Player ply1 = new HumanPlayer(name, null);
+		Player ply2 = getOpponent(opp1);
 		do {
 		
-			//get rps value
+		
 		Roshambo choice1 = ply1.generateRoshambo(); 
 		//set opponent value
 		ply2.setName();
 		ply2.setValue();
 		Roshambo choice2=ply2.getValue();
-		//get roshambo value
 		
-		//print what each player choose
-		//keep count
-		
+		//Replaced name in our print lines to having our HumanPlayer call a method to
+		//get the name instead
 		System.out.println("\n" + ply1.getName() + ":" + choice1.toString());
 		System.out.println(ply2.getName() + ":" + choice2.toString());
 		
@@ -59,6 +59,8 @@ public class RoshamboApp {
 		//while what?
 		//exit message
 	}
+	
+	//deleted getPlayerValue method
 	
 	public static Player getOpponent(char choosingOpp){
 		Player opponent;

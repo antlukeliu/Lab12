@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class RPSValidator {
+	
+//Made RPSVal method static
 public static char RPSVal(){
 		
 		Scanner sc = new Scanner(System.in);

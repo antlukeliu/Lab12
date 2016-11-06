@@ -6,6 +6,11 @@ public class HumanPlayer extends Player {
 		
 	}
 
+	
+//Used the class RPSValidator and called the method RPSVal
+//set the output to equal a char called rps
+//Created an if/else if/else statement based on the value of char
+//which will return a Roshambo value 
 	@Override
 	public Roshambo generateRoshambo() {
 		char rps = RPSValidator.RPSVal();
