@@ -33,7 +33,8 @@ public static char RPSVal(){
 		String response = "";
 		boolean cont = true;
 		while(cont){
-			System.out.print("\nChoose a opponent Animal or Robot (a/r): ");
+			//Altered the print line
+			System.out.print("\nChoose an opponent Zelda the Animal or Wall-e the Robot (a/r): ");
 			response = sc.nextLine();
 			if(response.length() != 1){
 				continue;
