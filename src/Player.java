@@ -1,5 +1,5 @@
-
-public class Player {
+public abstract class Player {
+	
 	String name;
 	Roshambo value;//Roshambo whatever they pick
 	
@@ -24,4 +24,6 @@ public class Player {
 		this.value = value;
 	}
 	//abstract method generateRoshamboApp
+	public abstract Roshambo generateRoshambo();
+		
 }

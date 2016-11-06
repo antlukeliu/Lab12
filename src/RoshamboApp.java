@@ -3,48 +3,61 @@ import java.util.Scanner;
 public class RoshamboApp {
 
 	public static void main(String[] args) {
+		RPSValidator rpsv = new RPSValidator();
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Welcome to Rock Paper Scissors");
-		System.out.print("Enter your name");
+		System.out.print("Enter your name: ");
 		
 		String name = scan.nextLine();
 		
-		System.out.println("Would you like to play against Animal or Robot(a/r)?: ");
-		String opponent = scan.nextLine();
+		int playCount = 0;
+		int oppCount = 0;
+		int drawCount = 0;
 		
+		char opp1 = rpsv.PlayerVal();
+		boolean condition = true;
+		Player ply2 = getOpponent(opp1);
+		Player ply1 = new HumanPlayer(name, null);
+		do {
 		
-		//do
-		System.out.println("Rock, paper, or scissors?(R/P/S)");
-		String value = scan.nextLine();
-		//get rps value
+			//get rps value
+		Roshambo choice1 = ply1.generateRoshambo(); 
 		//set opponent value
+		ply2.setName();
+		ply2.setValue();
+		Roshambo choice2=ply2.getValue();
 		//get roshambo value
+		
 		//print what each player choose
 		//keep count
 		
-		if((choice1.equals("paper") && choice2.equals("rock")) 
-				||(choice1.equals("rock") && choice1.equals("scissors"))
-				||(choice1.equals("scissors") && choice2.equals("paper"))){
-				System.out.println(Player1 + " wins");}
-		else if(choice1.equals(choice2)){
-			System.out.println("Draw");
-		}else{
-			System.out.println(Player2 + " wins");
-		}
-
+		System.out.println("\n" + ply1.getName() + ":" + choice1.toString());
+		System.out.println(ply2.getName() + ":" + choice2.toString());
+		
+		if((choice1==Roshambo.PAPER && choice2==Roshambo.ROCK) 
+                ||(choice1==Roshambo.ROCK && choice2==Roshambo.SCISSORS)
+                ||(choice1==Roshambo.SCISSORS && choice2==Roshambo.PAPER)){
+                System.out.println(ply1.getName() + " wins!");
+                playCount++;
+            }
+        else if(choice1==choice2){
+            System.out.println("Draw");
+            drawCount++;
+        }else{
+            System.out.println(ply2.getName() + " wins");
+            oppCount++;
+        }
+        System.out.printf("\n%s has %d wins - %d ties - %d loses", 
+                ply1.getName(), playCount, drawCount, oppCount);
+			
+		char ch2 = rpsv.YesOrNo();
+		condition = rpsv.loopingAgain(ch2);
+		}while(condition);
+		System.out.println("Thanks for playing!");
 		//print count
 		//loop again
 		//while what?
 		//exit message
-	}
-	public static Roshambo getPlayerValue(char rps){
-		if (rps == 'r'){
-			return Roshambo.ROCK;
-		}else if (rps == 's'){
-			return Roshambo.SCISSORS;
-		}else{
-			return Roshambo.PAPER;
-		}
 	}
 	
 	public static Player getOpponent(char choosingOpp){
@@ -57,4 +70,3 @@ public class RoshamboApp {
 		return opponent;
 	}
 	}
-
